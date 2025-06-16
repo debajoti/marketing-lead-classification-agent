@@ -1,0 +1,2 @@
+{"Lead Status":"Hot","Extracted Metadata":{"Location":"Kolkata","Property Type":"2 BHK","Budget":"₹80L","Timeline":"3 months","Purpose":"Investment"}}
+{"Lead Status":"Invalid","Extracted Metadata":{"reason":"Unclear or non-serious input","action":"Flagged for review"}}
