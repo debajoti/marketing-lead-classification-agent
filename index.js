@@ -5,6 +5,13 @@ import { systemPrompt } from "./systemPrompts.js";
 import e from "express";
 import { fileURLToPath } from "url";
 import path from "path";
+import { connectDB } from "./lib/connect.js";
+
+connectDB(process.env.MONGO_URI)
+.then(() => console.log("Connected to DB"))
+.catch((error) => {
+    console.error("DB error", error);
+})
 
 const app = e();
 const client = new OpenAI({
@@ -26,7 +33,6 @@ app.get('/', (req, res) => {
 })
 app.post('/chat', async (req, res) => {
   const userMsg = req.body.message;
-  console.log(userMsg);
   messages.push({ role: 'user', content: userMsg });
 
   const completion = await client.chat.completions.create({
@@ -36,7 +42,6 @@ app.post('/chat', async (req, res) => {
   });
 
   const reply = completion.choices[0].message.content;
-  console.log(reply);
   
   messages.push({role: 'assistant', content:reply });
 

@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&display=swap');
+
+body {
+    font-family: "Cascadia Mono", sans-serif;
+    font-weight: 400;
+    font-size: smaller;
+    font-style: normal;
+    background: #16191b;
+    margin: 0;
+    padding: 2em;
+}
+
+.chat {
+    max-width: 600px;
+    margin: auto;
+    background: #202224;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#chatBox {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 10px;
+    margin-bottom: 1em;
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+
+    scrollbar-width: none;  
+    -ms-overflow-style: none;
+}
+
+#chatBox::-webkit-scrollbar {
+    display: none;
+}
+
+.message {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5em;
+    margin: 0.75em 0;
+    max-width: 80%;
+    padding: 0.75em 1em;
+    border-radius: 20px;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+.user {
+    background: #d1eaff;
+    align-self: flex-end;
+    text-align: right;
+    font-size: x-small;
+    border-top-right-radius: 0;
+    flex-direction: row-reverse;
+}
+
+.assistant {
+    background: #f0f0f0;
+    align-self: flex-start;
+    text-align: left;
+    font-size: x-small;
+    color: #333;
+    border-top-left-radius: 0;
+}
+
+.avatar {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+#chatControl {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5em;
+    margin-top: auto;
+}
+
+#userInput {
+    flex: 1;
+    padding: 0.75em;
+    border-radius: 8px;
+    background: #16191b;
+    color: white;
+    border: 2px solid #ffffff;
+    font-size: 1em;
+}
+
+button {
+    padding: 0.75em 1.2em;
+    background: #0077ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #005dd1;
+}
+
+.text {
+    flex: 1;
+}

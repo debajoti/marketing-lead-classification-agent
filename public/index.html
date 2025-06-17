@@ -5,100 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&display=swap');
-
-    body {
-        font-family: "Cascadia Mono", sans-serif;
-        font-weight: 400;
-        font-size: smaller;
-        font-style: normal;
-        background: #16191b;
-        margin: 0;
-        padding: 2em;
-    }
-
-    .chat {
-    max-width: 600px;
-    margin: auto;
-    background: #202224;
-    border-radius: 16px;
-    padding: 20px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-}
-
-    #chatBox {
-    flex: 1;
-    overflow-y: auto;
-    padding-right: 10px;
-    margin-bottom: 1em;
-    scroll-behavior: smooth;
-    display: flex;
-    flex-direction: column;
-}
-
-    .message {
-        margin: 0.75em 0;
-        max-width: 80%;
-        padding: 0.75em 1em;
-        border-radius: 20px;
-        line-height: 1.4;
-        word-wrap: break-word;
-    }
-
-    .user {
-        background: #d1eaff;
-        align-self: flex-end;
-        text-align: right;
-        font-size: x-small;
-        border-top-right-radius: 0;
-    }
-
-    .assistant {
-        background: #f0f0f0;
-        align-self: flex-start;
-        text-align: left;
-        font-size: x-small;
-        color: #333;
-        border-top-left-radius: 0;
-    }
-
-    #chatControl {
-        display: flex;
-        justify-content: space-between;
-        gap: 0.5em;
-        margin-top: auto; 
-    }
-
-    #userInput {
-        flex: 1;
-        padding: 0.75em;
-        border-radius: 8px;
-        background: #16191b;
-        color: white;
-        border: 2px solid #ffffff;
-        font-size: 1em;
-    }
-
-    button {
-        padding: 0.75em 1.2em;
-        background: #0077ff;
-        color: white;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        font-weight: 600;
-        transition: background 0.3s;
-    }
-
-    button:hover {
-        background: #005dd1;
-    }
-</style>
-
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
@@ -116,9 +23,18 @@
     function appendMsg(role, text) {
         const div = document.createElement("div");
         div.className = "message " + role;
-        div.textContent = text;
-        chatBox.appendChild(div);
 
+        const avatar = document.createElement('img');
+        avatar.className = 'avatar';
+        avatar.src = (role === 'user') ? 'user.png' : 'boy.png';
+
+        const textMsg = document.createElement('div'); 
+        textMsg.className = "text";
+        textMsg.textContent = text;
+        
+        div.appendChild(avatar);
+        div.appendChild(textMsg);
+        chatBox.appendChild(div);
         chatBox.scrollTop = chatBox.scrollHeight;
     }
 
@@ -141,21 +57,14 @@
         appendMsg("assistant", data.reply);
 
         if (data.logged) {
-            const hrTop = document.createElement('hr');
-            hrTop.style.border = '1px solid green';
-            chatBox.appendChild(hrTop);
-
             const message = document.createElement('div');
             message.textContent = 'Response recorded!';
             message.style.fontWeight = 'bold';
             message.style.color = 'green';
             message.style.textAlign = 'center';
             chatBox.appendChild(message);
-            
-            const hrBottom = document.createElement('hr');
-            hrBottom.style.border = '1px solid green';
-            chatBox.appendChild(hrBottom)
-        } 
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
     }
 </script>
 

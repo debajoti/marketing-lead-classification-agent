@@ -1,9 +1,15 @@
-import fs from 'node:fs'
+import mongoose from "mongoose";
 
-function logFiles(data) {
+const LogSchema = new mongoose.Schema({}, {strict: false});
+const Log = mongoose.model('Log', LogSchema);
+
+async function logFiles(data) {
     try {
-        const log = JSON.stringify(data) + '\n';
-        fs.appendFileSync('log.txt', log, 'utf-8');
+        const log = new Log({
+            ...data,
+            timestamp: new Date()
+        })
+        await log.save();
         return "Your response has been stored!"
     } catch (error) {
         console.error(error.message)
@@ -15,6 +21,6 @@ export const available_tools = {
   logFiles: {
     fn: logFiles,
     description:
-      "this takes classification data object and stores it in the log.txt",
+      "This takes classification data object and stores it in the log.txt",
   },
 }

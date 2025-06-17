@@ -9,3 +9,4 @@
 {"Lead Status":"Invalid","Extracted Metadata":{"Reason":"Fake/test entry","Action":"Flagged for review"}}
 {"Lead Status":"Invalid","Extracted Metadata":{"Reason":"Fake/test entry","Action":"Flagged for review"}}
 {"Lead Status":"Hot","Extracted Metadata":{"Location":"Bangalore","Property Type":"1BHK Flat","Budget":"$200,000 USD","Timeline":"Immediate","Purpose":"Personal use"}}
+{"Lead Status":"Hot","Extracted Metadata":{"Location":"Bangalore, Indiranagar","Property Type":"Not specified","Budget":"₹70L","Timeline":"Flexible","Purpose":"Personal use"}}
