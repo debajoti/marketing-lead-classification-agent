@@ -48,7 +48,9 @@ app.post('/chat', async (req, res) => {
   try{
     const responseJson = JSON.parse(reply);
     if (responseJson.function === 'logFiles') {
-      const result = available_tools.logFiles.fn(responseJson.input);
+      const transcripts = messages.slice(1)
+      const msg = {...responseJson.input, transcripts};
+      const result = available_tools.logFiles.fn(msg);
       return res.json({reply: responseJson.content, logged: true, status:result});
     }
     else {
