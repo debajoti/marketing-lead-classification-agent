@@ -1,2 +1,11 @@
 {"Lead Status":"Hot","Extracted Metadata":{"Location":"Kolkata","Property Type":"2 BHK","Budget":"₹80L","Timeline":"3 months","Purpose":"Investment"}}
 {"Lead Status":"Invalid","Extracted Metadata":{"reason":"Unclear or non-serious input","action":"Flagged for review"}}
+{"Lead Status":"Cold","Extracted Metadata":{"Location":"Tier 1 city","Purpose":"Exploring new opportunities"}}
+{"Lead Status":"Invalid","Extracted Metadata":{"Location":"Kolkata","Property Type":"Villa","Purpose":"Inappropriate response"}}
+{"Lead Status":"Invalid","Extracted Metadata":{"Location":"Kolkata","Purpose":"Inappropriate request"}}
+{"Lead Status":"Hot","Extracted Metadata":{"Location":"Bangalore, Indiranagar","Property Type":"2BHK Flat","Budget":"Not specified for rent","Timeline":"Within 1 month","Purpose":"Rent"}}
+{"Lead Status":"Invalid","Extracted Metadata":{"Reason":"Non-meaningful input","Action":"Flagged for review"}}
+{"Lead Status":"Invalid","Extracted Metadata":{"Reason":"Fake/test entry","Action":"Flagged for review"}}
+{"Lead Status":"Invalid","Extracted Metadata":{"Reason":"Fake/test entry","Action":"Flagged for review"}}
+{"Lead Status":"Invalid","Extracted Metadata":{"Reason":"Fake/test entry","Action":"Flagged for review"}}
+{"Lead Status":"Hot","Extracted Metadata":{"Location":"Bangalore","Property Type":"1BHK Flat","Budget":"$200,000 USD","Timeline":"Immediate","Purpose":"Personal use"}}
